@@ -10,7 +10,7 @@ jobs:
       - name: Récupération du Repo
         uses: actions/checkout@v3
       - name: Test unitaire
-        run: exit 1
+        run: echo "T"
       # - name: Create issue if fail
       #   if: failure()
       #   uses: dacbd/create-issue-action@main
