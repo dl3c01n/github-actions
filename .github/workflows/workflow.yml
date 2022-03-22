@@ -12,6 +12,7 @@ jobs:
       - name: Test unitaire
         run: echo "Je fais des tests"
   Build-App:
+    needs: Mon-Premier
     runs-on: ubuntu-latest
     steps:
       - name: Récupération du Repo
