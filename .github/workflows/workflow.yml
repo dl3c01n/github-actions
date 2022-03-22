@@ -9,5 +9,12 @@ jobs:
     steps:
       - name: Récupération du Repo
         uses: actions/checkout@v3
-      - name: Liste le contenu du dossier
-        run: ls
+      - name: Test unitaire
+        run: echo "Je fais des tests"
+  Build-App:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupération du Repo
+        uses: actions/checkout@v3
+      - name: Build App
+        run: echo "Je build l'application"
