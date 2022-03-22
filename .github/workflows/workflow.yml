@@ -13,12 +13,11 @@ jobs:
         run: exit 1
       - name: Create issue if fail
         if: failure()
-        uses: JasonEtco/create-an-issue@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: dacbd/create-issue-action@main
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           title: Test unitaire fail
-          label: bug
+          body: bug
   Build-App:
     needs: Mon-Premier
     runs-on: ubuntu-latest
