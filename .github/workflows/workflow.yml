@@ -17,6 +17,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: Test unitaire fail
+          assignees: dl3c01n
           body: |
             Les tests ont échoué
             Workflow name : `${{ github.workflow }}`
