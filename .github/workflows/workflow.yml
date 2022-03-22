@@ -10,7 +10,15 @@ jobs:
       - name: Récupération du Repo
         uses: actions/checkout@v3
       - name: Test unitaire
-        run: echo "Je fais des tests"
+        run: exit 1
+      - name: Create issue if fail
+        if: failure()
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          title: Test unitaire fail
+          label: bug
   Build-App:
     needs: Mon-Premier
     runs-on: ubuntu-latest
